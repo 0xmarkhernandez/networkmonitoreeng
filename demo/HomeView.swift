@@ -6,17 +6,20 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct HomeView: View {
-  @ObservedObject var vm = HomeViewModel()
+  @ObservedObject var viewModel = HomeViewModel()
 
   var body: some View {
-    Text(vm.networkConnection.description)
+    Text(viewModel.networkConnection.description)
   }
 }
 
-struct HomeView_Previews: PreviewProvider {
-  static var previews: some View {
-    HomeView()
+#if DEBUG
+  struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+      HomeView()
+    }
   }
-}
+#endif

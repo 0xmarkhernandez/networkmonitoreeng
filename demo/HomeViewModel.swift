@@ -15,7 +15,7 @@ final class HomeViewModel: ObservableObject {
     NotificationCenter.default.addObserver(
       self,
       selector: #selector(didRefreshInternetConnection),
-      name: .DidRefreshInternetConnection,
+      name: .didRefreshInternetConnection,
       object: nil)
   }
 
@@ -29,7 +29,7 @@ final class HomeViewModel: ObservableObject {
     guard let connection = notification.object as? Networkeeng.Connection else {
       return
     }
-    
+
     DispatchQueue.main.async {
       self.networkConnection = connection
     }

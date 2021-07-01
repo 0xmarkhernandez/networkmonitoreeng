@@ -1,6 +1,6 @@
 //
-//  networkeeng.swift
-//  networkeeng
+//  Networkeeng.swift
+//  Networkeeng
 //
 //  Created by Mark Angelo Hernandez on 27/06/2021.
 //
@@ -11,7 +11,9 @@ import Network
 private let bundleIdPrefix = "com.markangelohernandez.networkeeng"
 
 extension Notification.Name {
-  public static let DidRefreshInternetConnection =
+
+  /// A notification when an app internet connection refreshes.
+  public static let didRefreshInternetConnection =
     Notification.Name("\(bundleIdPrefix).DidRefreshInternetConnection")
 }
 
@@ -20,6 +22,7 @@ public final class Networkeeng: NSObject {
   public enum Connection: CustomStringConvertible {
     case none
     case unavailable, wifi, cellular
+
     public var description: String {
       switch self {
       case .cellular: return "Cellular"
@@ -31,11 +34,11 @@ public final class Networkeeng: NSObject {
   }
 
   enum VPNProtocols: String, CaseIterable {
-    case tun = "tun"
-    case ipsec = "ipsec"
-    case ppp = "ppp"
-    case tap = "tap"
-    case tan = "tan"
+    case ipsec
+    case ppp
+    case tan
+    case tap
+    case tun
   }
 
   public static let shared = Networkeeng()
@@ -45,14 +48,14 @@ public final class Networkeeng: NSObject {
   public var isConnectedToVPN: Bool = false
 
   #if TEST
-  var testReachable: Bool?
+    var testReachable: Bool?
   #endif
 
   public var isReachable: Bool {
     #if TEST
-    return testReachable ?? (_networkStatus != Networkeeng.Connection.none)
+      return testReachable ?? (_networkStatus != Networkeeng.Connection.none)
     #else
-    return networkStatus != .unavailable
+      return networkStatus != .unavailable
     #endif
   }
 
@@ -63,7 +66,8 @@ public final class Networkeeng: NSObject {
 
       let availableInterfaces = path.availableInterfaces
       if !availableInterfaces.isEmpty {
-        let list = availableInterfaces.map { $0.debugDescription }.joined(separator: " | ")
+        let list = availableInterfaces.map { $0.debugDescription }
+          .joined(separator: " | ")
         for vpnProtocol in self.vpnProtocols {
           let isVPNProtocol = list.contains(vpnProtocol.rawValue)
           if isVPNProtocol {
@@ -83,7 +87,7 @@ public final class Networkeeng: NSObject {
 
       self.networkStatus = status
       NotificationCenter.default.post(
-        name: .DidRefreshInternetConnection,
+        name: .didRefreshInternetConnection,
         object: status)
     }
 
