@@ -1,5 +1,9 @@
 # 👑 networkeeng
 
+[![Build Status](https://app.bitrise.io/app/739b590ab2f1834f/status.svg?token=pD_N_bPdxntXmWXOfXnqJA&branch=main)](https://app.bitrise.io/app/739b590ab2f1834f)
+
+<br />
+
 **Code Style**<br />
 [Swift Style Guide from Google](https://google.github.io/swift/)<br /><br />
 
@@ -10,9 +14,11 @@ Here are some commands I used during testing.
 swift-format demo/*.swift --configuration .swift-format.json --in-place
 swift-format networkeeng/*.swift --configuration .swift-format.json --in-place
 ```
-Some good articles<br />
-[How to start working with swift-format](https://exyte.com/blog/how-to-start-working-with-swift-format)
-[Swift Code Formatters](https://nshipster.com/swift-format/)
+<br />
+
+**Some good articles**<br />
+[How to start working with swift-format](https://exyte.com/blog/how-to-start-working-with-swift-format)<br />
+[Swift Code Formatters](https://nshipster.com/swift-format/)<br /><br />
 
 **💡 Tips**<br />
 Here's a code snippet when formatting a long String so that swift-format doesn't complain.
@@ -35,3 +41,7 @@ et netus et malesuada fames ac turpis egestas integer eget aliquet nibh
 praesent tristique magna sit amet
 """
 ```
+<br />
+
+**ℹ️ Note**<br />
+This is my first time to try an open-source project and I appreciate your feedback or pointing me to the right direction to make `networkeeng` help the iOS open-source community.
