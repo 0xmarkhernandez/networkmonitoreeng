@@ -1,6 +1,6 @@
 //
 //  DemoApp.swift
-//  Demo
+//  demo
 //
 //  Created by Mark Angelo Hernandez on 27/06/2021.
 //

@@ -12,7 +12,18 @@ struct HomeView: View {
   @ObservedObject var viewModel = HomeViewModel()
 
   var body: some View {
-    Text(viewModel.networkConnection.description)
+    VStack(alignment: .leading) {
+      Text("Internet connected via:")
+        .fontWeight(.regular)
+      Text(viewModel.networkConnection.description)
+        .fontWeight(.heavy)
+      Text("VPN protocol:")
+        .fontWeight(.regular)
+      Text(viewModel.vpnProtocol.rawValue)
+        .fontWeight(.heavy)
+      Spacer()
+    }
+    .frame(maxWidth: .infinity)
   }
 }
 

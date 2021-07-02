@@ -33,62 +33,66 @@ public final class Networkeeng: NSObject {
     }
   }
 
-  enum VPNProtocols: String, CaseIterable {
+  public enum VPNProtocol: String, CaseIterable {
     case ipsec
     case ppp
     case tan
     case tap
     case tun
+    case none
+  }
+
+  public struct NetworkStatus {
+    public let connection: Connection
+    public let vpnProtocol: VPNProtocol
   }
 
   public static let shared = Networkeeng()
+
+  public var networkStatus: NetworkStatus =
+    NetworkStatus(
+      connection: .none,
+      vpnProtocol: .none)
+
   private let monitor = NWPathMonitor()
-  private let vpnProtocols = VPNProtocols.allCases
-  public var networkStatus: Networkeeng.Connection = .unavailable
-  public var isConnectedToVPN: Bool = false
-
-  #if TEST
-    var testReachable: Bool?
-  #endif
-
-  public var isReachable: Bool {
-    #if TEST
-      return testReachable ?? (_networkStatus != Networkeeng.Connection.none)
-    #else
-      return networkStatus != .unavailable
-    #endif
-  }
+  private let vpnProtocols = VPNProtocol.allCases
 
   public override init() {}
 
   public func start() {
     let pathUpdateHandler = { (path: NWPath) in
 
+      // Setting initial VPN protocol value to none.
+      var vpnProtocol: VPNProtocol = .none
+
       let availableInterfaces = path.availableInterfaces
       if !availableInterfaces.isEmpty {
         let list = availableInterfaces.map { $0.debugDescription }
           .joined(separator: " | ")
-        for vpnProtocol in self.vpnProtocols {
-          let isVPNProtocol = list.contains(vpnProtocol.rawValue)
+        for vpnProtocolValue in self.vpnProtocols {
+          let isVPNProtocol = list.contains(vpnProtocolValue.rawValue)
           if isVPNProtocol {
-            self.isConnectedToVPN = true
+            vpnProtocol = vpnProtocolValue
           }
         }
       }
 
-      var status: Connection = .none
+      var connection: Connection = .none
       if path.usesInterfaceType(.wifi) {
-        status = .wifi
+        connection = .wifi
       } else if path.usesInterfaceType(.cellular) {
-        status = .cellular
+        connection = .cellular
       } else {
-        status = .unavailable
+        connection = .unavailable
       }
 
-      self.networkStatus = status
+      let networkStatus = NetworkStatus(
+        connection: connection,
+        vpnProtocol: vpnProtocol)
       NotificationCenter.default.post(
         name: .didRefreshInternetConnection,
-        object: status)
+        object: networkStatus)
+      self.networkStatus = networkStatus
     }
 
     monitor.pathUpdateHandler = pathUpdateHandler

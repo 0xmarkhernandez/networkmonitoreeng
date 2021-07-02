@@ -10,6 +10,7 @@ import networkeeng
 
 final class HomeViewModel: ObservableObject {
   @Published var networkConnection: Networkeeng.Connection = .none
+  @Published var vpnProtocol: Networkeeng.VPNProtocol = .none
 
   private func initiateNotifications() {
     NotificationCenter.default.addObserver(
@@ -26,12 +27,14 @@ final class HomeViewModel: ObservableObject {
 
   @objc
   private func didRefreshInternetConnection(notification: NSNotification) {
-    guard let connection = notification.object as? Networkeeng.Connection else {
+    guard let networkStatus = notification.object as? Networkeeng.NetworkStatus
+    else {
       return
     }
 
     DispatchQueue.main.async {
-      self.networkConnection = connection
+      self.networkConnection = networkStatus.connection
+      self.vpnProtocol = networkStatus.vpnProtocol
     }
   }
 }
