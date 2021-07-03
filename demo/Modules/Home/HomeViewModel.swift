@@ -9,7 +9,9 @@ import SwiftUI
 import networkeeng
 
 final class HomeViewModel: ObservableObject {
-  @Published var networkConnection: Networkeeng.Connection = .none
+  @Published var connection: Networkeeng.Connection = .none
+  @Published var connectionStatus: Networkeeng.ConnectionStatus =
+    .unknown
   @Published var vpnProtocol: Networkeeng.VPNProtocol = .none
 
   private func initiateNotifications() {
@@ -33,7 +35,8 @@ final class HomeViewModel: ObservableObject {
     }
 
     DispatchQueue.main.async {
-      self.networkConnection = networkStatus.connection
+      self.connection = networkStatus.connection
+      self.connectionStatus = networkStatus.status
       self.vpnProtocol = networkStatus.vpnProtocol
     }
   }
