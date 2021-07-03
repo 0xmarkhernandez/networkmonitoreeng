@@ -33,6 +33,22 @@ public final class Networkeeng: NSObject {
     }
   }
 
+  public enum ConnectionStatus: String, CaseIterable {
+    case requiresConnection
+    case satisfied
+    case unsatisfied
+    case unknown
+
+    public var description: String {
+      switch self {
+      case .requiresConnection: return "Requires Connection"
+      case .satisfied: return "Satisfied"
+      case .unsatisfied: return "Unsatisfied"
+      case .unknown: return "Unknown"
+      }
+    }
+  }
+
   public enum VPNProtocol: String, CaseIterable {
     case ipsec
     case ppp
@@ -44,6 +60,7 @@ public final class Networkeeng: NSObject {
 
   public struct NetworkStatus {
     public let connection: Connection
+    public let status: ConnectionStatus
     public let vpnProtocol: VPNProtocol
   }
 
@@ -52,6 +69,7 @@ public final class Networkeeng: NSObject {
   public var networkStatus: NetworkStatus =
     NetworkStatus(
       connection: .none,
+      status: .unsatisfied,
       vpnProtocol: .none)
 
   private let monitor = NWPathMonitor()
@@ -86,8 +104,21 @@ public final class Networkeeng: NSObject {
         connection = .unavailable
       }
 
+      var status: ConnectionStatus
+      switch path.status {
+      case .requiresConnection:
+        status = .requiresConnection
+      case .satisfied:
+        status = .satisfied
+      case .unsatisfied:
+        status = .unsatisfied
+      @unknown default:
+        status = .unknown
+      }
+
       let networkStatus = NetworkStatus(
         connection: connection,
+        status: status,
         vpnProtocol: vpnProtocol)
       NotificationCenter.default.post(
         name: .didRefreshInternetConnection,

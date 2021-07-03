@@ -21,6 +21,7 @@
 		A68BF443268831E800D44A05 /* networkeeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68BF439268831E800D44A05 /* networkeeng.framework */; };
 		A68BF448268831E800D44A05 /* networkeengTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68BF447268831E800D44A05 /* networkeengTests.swift */; };
 		A68BF44A268831E800D44A05 /* Networkeeng.h in Headers */ = {isa = PBXBuildFile; fileRef = A68BF43C268831E800D44A05 /* Networkeeng.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6FD230E2690BF69000F49FB /* HomeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FD230D2690BF69000F49FB /* HomeViewRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		A68BF442268831E800D44A05 /* networkeengTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = networkeengTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68BF447268831E800D44A05 /* networkeengTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkeengTests.swift; sourceTree = "<group>"; };
 		A68BF449268831E800D44A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6FD230D2690BF69000F49FB /* HomeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,13 +138,12 @@
 		A66B5970268834F800ADEEF8 /* demo */ = {
 			isa = PBXGroup;
 			children = (
-				A66B5971268834F800ADEEF8 /* DemoApp.swift */,
-				A66B5973268834F800ADEEF8 /* ContentView.swift */,
 				A66B5975268834F900ADEEF8 /* Assets.xcassets */,
+				A66B5973268834F800ADEEF8 /* ContentView.swift */,
+				A66B5971268834F800ADEEF8 /* DemoApp.swift */,
 				A66B597A268834F900ADEEF8 /* Info.plist */,
+				A6FD230F2690C026000F49FB /* Modules */,
 				A66B5977268834F900ADEEF8 /* Preview Content */,
-				A66B599A2688354600ADEEF8 /* HomeView.swift */,
-				A66B599C2688355F00ADEEF8 /* HomeViewModel.swift */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -214,6 +215,24 @@
 				A68BF449268831E800D44A05 /* Info.plist */,
 			);
 			path = networkeengTests;
+			sourceTree = "<group>";
+		};
+		A6FD230F2690C026000F49FB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A6FD23102690C03A000F49FB /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A6FD23102690C03A000F49FB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A66B599A2688354600ADEEF8 /* HomeView.swift */,
+				A66B599C2688355F00ADEEF8 /* HomeViewModel.swift */,
+				A6FD230D2690BF69000F49FB /* HomeViewRow.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A66B599B2688354600ADEEF8 /* HomeView.swift in Sources */,
+				A6FD230E2690BF69000F49FB /* HomeViewRow.swift in Sources */,
 				A66B5974268834F800ADEEF8 /* ContentView.swift in Sources */,
 				A66B5972268834F800ADEEF8 /* DemoApp.swift in Sources */,
 				A66B599D2688355F00ADEEF8 /* HomeViewModel.swift in Sources */,
