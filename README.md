@@ -4,6 +4,18 @@
 
 <br />
 
+|WiFi-No VPN|Cellular-No VPN|
+|-|-|
+|<img width="300" src="images/networkeeng_wifi.PNG">|<img width="300" src="images/networkeeng_cellular.PNG">|
+
+|WiFi-VPN|Cellular-VPN|
+|-|-|
+|<img width="300" src="images/networkeeng_wifi_vpn.PNG">|<img width="300" src="images/networkeeng_cellular_vpn.PNG">|
+
+|No Connection|
+|-|
+|<img width="300" src="images/networkeeng_no_connection.PNG">|
+
 **Code Style**<br />
 [Swift Style Guide from Google](https://google.github.io/swift/)<br /><br />
 
