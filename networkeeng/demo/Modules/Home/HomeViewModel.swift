@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import networkeeng
+import Networkeeng
 
 final class HomeViewModel: ObservableObject {
   @Published var connection: Networkeeng.Connection = .none
