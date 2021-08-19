@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A60A688326CE281B00962757 /* Networkeeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60A687926CE281B00962757 /* Networkeeng.framework */; };
 		A60A688826CE281B00962757 /* NetworkeengTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60A688726CE281B00962757 /* NetworkeengTests.swift */; };
-		A631ECBD26CE604D0001BC78 /* Networkeeng.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631ECBC26CE604D0001BC78 /* Networkeeng.swift */; };
+		A631ECCB26CE64AD0001BC78 /* Networkeeng.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631ECCA26CE64AD0001BC78 /* Networkeeng.swift */; };
 		A6C3ABEA26CE2E000017AF45 /* TestApplicationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C3ABE926CE2E000017AF45 /* TestApplicationApp.swift */; };
 		A6C3ABEC26CE2E000017AF45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C3ABEB26CE2E000017AF45 /* ContentView.swift */; };
 		A6C3ABEE26CE2E010017AF45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6C3ABED26CE2E010017AF45 /* Assets.xcassets */; };
@@ -58,7 +58,7 @@
 		A60A688226CE281B00962757 /* NetworkeengTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkeengTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60A688726CE281B00962757 /* NetworkeengTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkeengTests.swift; sourceTree = "<group>"; };
 		A60A688926CE281B00962757 /* NetworkeengTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NetworkeengTests.plist; sourceTree = "<group>"; };
-		A631ECBC26CE604D0001BC78 /* Networkeeng.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Networkeeng.swift; path = ../../Sources/Networkeeng.swift; sourceTree = "<group>"; };
+		A631ECCA26CE64AD0001BC78 /* Networkeeng.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Networkeeng.swift; path = Networkeeng/Networkeeng.swift; sourceTree = "<group>"; };
 		A6C3ABE726CE2E000017AF45 /* TestApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C3ABE926CE2E000017AF45 /* TestApplicationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApplicationApp.swift; sourceTree = "<group>"; };
 		A6C3ABEB26CE2E000017AF45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				A60A689326CE288900962757 /* Configs */,
-				A60A687B26CE281B00962757 /* Sources */,
+				A631ECC626CE64850001BC78 /* Sources */,
 				A60A688626CE281B00962757 /* Tests */,
 				A6C3ABE826CE2E000017AF45 /* TestApplication */,
 				A60A687A26CE281B00962757 /* Products */,
@@ -117,14 +117,6 @@
 				A6C3ABE726CE2E000017AF45 /* TestApplication.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A60A687B26CE281B00962757 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				A631ECBC26CE604D0001BC78 /* Networkeeng.swift */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 		A60A688626CE281B00962757 /* Tests */ = {
@@ -158,6 +150,15 @@
 				A60A687D26CE281B00962757 /* Networkeeng.plist */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		A631ECC626CE64850001BC78 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A631ECCA26CE64AD0001BC78 /* Networkeeng.swift */,
+			);
+			name = Sources;
+			path = ../Sources;
 			sourceTree = "<group>";
 		};
 		A6C3ABE826CE2E000017AF45 /* TestApplication */ = {
@@ -346,7 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A631ECBD26CE604D0001BC78 /* Networkeeng.swift in Sources */,
+				A631ECCB26CE64AD0001BC78 /* Networkeeng.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +601,7 @@
 		A6C3ABF326CE2E010017AF45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -622,6 +624,7 @@
 		A6C3ABF426CE2E010017AF45 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
