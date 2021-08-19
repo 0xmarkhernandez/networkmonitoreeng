@@ -10,14 +10,14 @@ import UIKit
 
 struct HomeView: View {
   @ObservedObject var viewModel = HomeViewModel()
-
+  
   var body: some View {
     VStack(alignment: .leading) {
       Text("👑 networkeeng")
         .font(.title)
         .fontWeight(.heavy)
         .accessibility(identifier: "homeViewTitle")
-
+      
       ScrollView(showsIndicators: false) {
         HomeViewRow(
           title: "Internet connected via:",
@@ -41,9 +41,9 @@ struct HomeView: View {
 }
 
 #if DEBUG
-  struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-      HomeView()
-    }
+struct HomeView_Previews: PreviewProvider {
+  static var previews: some View {
+    HomeView()
   }
+}
 #endif

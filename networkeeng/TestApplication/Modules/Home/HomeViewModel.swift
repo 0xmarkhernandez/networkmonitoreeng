@@ -13,7 +13,7 @@ final class HomeViewModel: ObservableObject {
   @Published var connectionStatus: Networkeeng.ConnectionStatus =
     .unknown
   @Published var vpnProtocol: Networkeeng.VPNProtocol = .none
-
+  
   private func initiateNotifications() {
     NotificationCenter.default.addObserver(
       self,
@@ -21,19 +21,19 @@ final class HomeViewModel: ObservableObject {
       name: .didRefreshInternetConnection,
       object: nil)
   }
-
+  
   init() {
     initiateNotifications()
     Networkeeng.shared.start()
   }
-
+  
   @objc
   private func didRefreshInternetConnection(notification: NSNotification) {
     guard let networkStatus = notification.object as? Networkeeng.NetworkStatus
     else {
       return
     }
-
+    
     DispatchQueue.main.async {
       self.connection = networkStatus.connection
       self.connectionStatus = networkStatus.status

@@ -8,9 +8,7 @@ let package = Package(
   platforms: [.iOS(.v12)],
   products: [
     // Products define the executables and libraries a package produces, and make them visible to other packages.
-    .library(
-      name: "Networkeeng",
-      targets: ["Networkeeng"]),
+    .library(name: "Networkeeng", targets: ["Networkeeng"]),
   ],
   dependencies: [
     // Dependencies declare other packages that this package depends on.
