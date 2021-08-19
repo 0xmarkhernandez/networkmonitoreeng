@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A66B596E268834F800ADEEF8"
-               BuildableName = "networkeeng.app"
-               BlueprintName = "demo"
-               ReferencedContainer = "container:networkeeng.xcodeproj">
+               BlueprintIdentifier = "A60A687826CE281B00962757"
+               BuildableName = "Networkeeng.framework"
+               BlueprintName = "Networkeeng"
+               ReferencedContainer = "container:Networkeeng.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A66B597E268834F900ADEEF8"
-               BuildableName = "demoTests.xctest"
-               BlueprintName = "demoTests"
-               ReferencedContainer = "container:networkeeng.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A66B5989268834F900ADEEF8"
-               BuildableName = "demoUITests.xctest"
-               BlueprintName = "demoUITests"
-               ReferencedContainer = "container:networkeeng.xcodeproj">
+               BlueprintIdentifier = "A60A688126CE281B00962757"
+               BuildableName = "NetworkeengTests.xctest"
+               BlueprintName = "NetworkeengTests"
+               ReferencedContainer = "container:Networkeeng.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -60,16 +50,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A66B596E268834F800ADEEF8"
-            BuildableName = "networkeeng.app"
-            BlueprintName = "demo"
-            ReferencedContainer = "container:networkeeng.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -77,16 +57,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A66B596E268834F800ADEEF8"
-            BuildableName = "networkeeng.app"
-            BlueprintName = "demo"
-            ReferencedContainer = "container:networkeeng.xcodeproj">
+            BlueprintIdentifier = "A60A687826CE281B00962757"
+            BuildableName = "Networkeeng.framework"
+            BlueprintName = "Networkeeng"
+            ReferencedContainer = "container:Networkeeng.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

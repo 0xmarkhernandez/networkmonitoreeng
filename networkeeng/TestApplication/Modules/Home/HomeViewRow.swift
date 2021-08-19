@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeViewRow: View {
   let title: String
   let description: String
-
+  
   var body: some View {
     HStack {
       VStack(alignment: .leading) {
@@ -27,11 +27,11 @@ struct HomeViewRow: View {
 }
 
 #if DEBUG
-  struct HomeViewRow_Previews: PreviewProvider {
-    static var previews: some View {
-      HomeViewRow(
-        title: "Title",
-        description: "Description")
-    }
+struct HomeViewRow_Previews: PreviewProvider {
+  static var previews: some View {
+    HomeViewRow(
+      title: "Title",
+      description: "Description")
   }
+}
 #endif
