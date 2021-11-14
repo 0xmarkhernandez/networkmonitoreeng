@@ -58,7 +58,7 @@ public final class Networkeeng: NSObject {
     case none
   }
 
-  public struct NetworkStatus {
+    public struct NetworkStatus: Equatable {
     public let connection: Connection
     public let status: ConnectionStatus
     public let vpnProtocol: VPNProtocol
