@@ -10,7 +10,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -19,7 +20,7 @@
                BlueprintIdentifier = "A60A688126CE281B00962757"
                BuildableName = "NetworkeengTests.xctest"
                BlueprintName = "NetworkeengTests"
-               ReferencedContainer = "container:Networkeeng.xcodeproj">
+               ReferencedContainer = "container:networkeeng.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

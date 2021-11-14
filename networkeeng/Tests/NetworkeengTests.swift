@@ -57,4 +57,20 @@ final class NetworkeengTests: XCTestCase {
       }
     }
   }
+    
+  func testNetworkeengStartStop() {
+    let networkeeng = Networkeeng.shared
+    
+    networkeeng.start()
+    XCTAssertEqual(networkeeng.networkStatus, Networkeeng.NetworkStatus(
+      connection: .none,
+      status: .unsatisfied,
+      vpnProtocol: .none))
+    
+    networkeeng.stop()
+    XCTAssertEqual(networkeeng.networkStatus, Networkeeng.NetworkStatus(
+      connection: .none,
+      status: .unsatisfied,
+      vpnProtocol: .none))
+  }
 }
